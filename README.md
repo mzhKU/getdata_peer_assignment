@@ -27,12 +27,14 @@ Measurement   Subject ID       Activity Label   Feature 1   Feature 2   [...]
 ```
 
 where the Features are those which report a mean or SD measurement.
-The tidy data set is uploaded as 'means_stds_cast.txt'.
+The tidy data set is uploaded as `means_stds_cast.txt`.
 
 
 ## How to execute the script
 The script is called by executing
+```bash
 $ ./run_analysis.R
+```
 on the command line.
 
 
