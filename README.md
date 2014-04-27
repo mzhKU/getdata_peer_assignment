@@ -7,7 +7,31 @@ This script merges the training and test sets obtained
 from a motion sensor in a mobile phone and performs some
 data transformations to arrive at a tidy data set.
 First, the training and test data is merged to a total data set
-(`xytot`). The data obtained from the sensors corresponding 
+(`xytot`). The following gives a schematic of the process:
+  
+```
+   1              561              1           563
+  ---          ----------         ---      -------------
+  | |          |        |         | |      ||         || 
+  | |         2|        |         | |      ||         || 
+  |id  cbind  9| X_test |  cbind  |Y|  ->  || XY_test ||
+  | |         4|        |         | |      ||         ||
+  | |         7|        |         | |      ||         ||
+  | |          |        |         | |      ||         ||
+  ---          ----------         ---      -------------
+              
+   1              561              1           563
+  ---          ----------         ---      -------------
+  | |          |        |         | |      ||         || 
+  | |         7|        |         | |      ||         || 
+  |id  cbind  3|X_train |  cbind  |Y|  ->  ||XY_train ||
+  | |         5|        |         | |      ||         ||
+  | |         2|        |         | |      ||         ||
+  | |          |        |         | |      ||         ||
+  ---          ----------         ---      -------------
+```
+
+The data obtained from the sensors corresponding 
 to mean and standard deviations are extracted from merged data
 set (`means_stds`).
 A tidy data set is prepared by first melting the data by
@@ -28,6 +52,8 @@ Measurement   Subject ID       Activity Label   Feature 1   Feature 2   [...]
 
 where the Features are those which report a mean or SD measurement.
 The tidy data set is uploaded as `means_stds_cast.txt`.
+More information on each step is found as comments within
+the `run_analysis.R` script.
 
 
 ## How to execute the script
