@@ -1,9 +1,11 @@
 # Instructions on the run_analysis.R script.
 
 ## Description
-In this assignment, a script is developed which
-reads in data from movement sensors in a mobile
-phone.
+This script merges the training and test sets obtained
+from a motion sensor in a mobile phone (called 'xytot').
+Then, the data corresponding to mean and standard
+deviations are extracted from that merged data set
+('means_stds').
 
 ## Calculation instruction
 The script is called by executing

@@ -119,10 +119,8 @@ library(reshape2)
 means_stds_melt <- melt(means_stds, id=c("id", "act.label"),
                                     measure.vars=colnames(means_stds[, 2:67])
                        )
-# This melted data frame is now cast such that for each activity, the mean
-# for every feature describing mean and SD characteristis is calculated.
-means_stds_cast <- dcast(means_stds_melt, act.label ~ variable, mean)
+# This melted data frame is now cast such that for each id and activity the mean
+# for every mean-/SD feature characteristics is calculated.
+means_stds_cast2 <- dcast(means_stds_melt, id + act.label ~ variable, mean)
 write.table(means_stds_cast, file="means_stds_cast.txt")
-# As a side note, the cast can also be prepared as
-# means_stds_cast2 <- dcast(means_stds_melt, id + act.label ~ variable, mean)
-# but the output of this is found to be much less clear.
+# **************************************
