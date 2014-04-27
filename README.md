@@ -42,7 +42,7 @@ on the command line.
 In the directory of the script, a directory
 called 'UCI HAR Dataset' needs to be present and
 containing the data from the assignment in its
-original form (i.e. the 'test' and 'train' directories
+original form (i.e. the `test` and `train` directories
 need to be present with their content from the original
 zip file. The original data is found under
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
