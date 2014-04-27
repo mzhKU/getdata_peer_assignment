@@ -121,6 +121,6 @@ means_stds_melt <- melt(means_stds, id=c("id", "act.label"),
                        )
 # This melted data frame is now cast such that for each id and activity the mean
 # for every mean-/SD feature characteristics is calculated.
-means_stds_cast2 <- dcast(means_stds_melt, id + act.label ~ variable, mean)
+means_stds_cast <- dcast(means_stds_melt, id + act.label ~ variable, mean)
 write.table(means_stds_cast, file="means_stds_cast.txt")
 # **************************************
